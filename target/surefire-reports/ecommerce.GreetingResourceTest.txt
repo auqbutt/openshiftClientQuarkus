@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: ecommerce.GreetingResourceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 13.411 s <<< FAILURE! - in ecommerce.GreetingResourceTest
+ecommerce.GreetingResourceTest.testHelloEndpoint  Time elapsed: 5.921 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <500>.
+
+	at ecommerce.GreetingResourceTest.testHelloEndpoint(GreetingResourceTest.java:17)
+

@@ -1,0 +1,4 @@
+# Created at 2021-12-03T12:39:28.254
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Atta\projects\Openshift\code-with-quarkus-client\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+
