@@ -3,7 +3,7 @@ WORKDIR /work/
 RUN chown 1001 /work \
     && chmod "g+rwX" /work \
     && chown 1001:root /work
-COPY --chown=1001:root target/*-runner /work/application
+COPY --chown=1001:root ./code-with-quarkus-client/target/code-with-quarkus-client-1.0.0-SNAPSHOT-runner.exe /work/application
 
 EXPOSE 8080
 USER 1001
