@@ -8,19 +8,20 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
 
-@Path("/hello")
+@Path("/hello123")
 public class GreetingResource {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
-    private static final Logger logger = Logger.getLogger(GreetingResource.class.getName());
+    //private static final Logger logger = Logger.getLogger(GreetingResource.class.getName());
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
 
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("openshift-git", 50055)
+        //ManagedChannel channel = ManagedChannelBuilder.forAddress("openshift-git", 50055)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50055)
                 .usePlaintext()
                 .build();
 
@@ -34,10 +35,10 @@ public class GreetingResource {
                                 "launched in February 2019")
                         .setPrice(700.0f)
                         .build());
-        logger.info("Product ID: " + productID.getValue() + " added successfully.");
+        //logger.info("Product ID: " + productID.getValue() + " added successfully.");
 
         ProductInfoOuterClass.Product product = stub.getProduct(productID);
-        logger.info("Product: " + product.toString());
+      //  logger.info("Product: " + product.toString());
         channel.shutdown();
 
         //return "Product ID: " + productID.getValue() + " added successfully. Product: " + product.toString();

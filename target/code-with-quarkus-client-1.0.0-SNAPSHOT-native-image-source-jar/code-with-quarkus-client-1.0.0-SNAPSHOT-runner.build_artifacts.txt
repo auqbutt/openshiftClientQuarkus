@@ -1,0 +1,6 @@
+[EXECUTABLE]
+code-with-quarkus-client-1.0.0-SNAPSHOT-runner.exe
+
+[JDK_LIB]
+sunmscapi.dll
+

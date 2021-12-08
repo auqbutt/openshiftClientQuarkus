@@ -1,14 +1,11 @@
-# Pull base ubuntu image.
-FROM ubuntu:latest
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.4
+WORKDIR /work/
+RUN chown 1001 /work \
+    && chmod "g+rwX" /work \
+    && chown 1001:root /work
+COPY --chown=1001:root target/*-runner /work/application
 
-RUN \
-# Update
-apt-get update -y && \
-# Install Java JRE
-apt-get install default-jre -y
-# Copy the build files to the container.
-ADD target/quarkusclient.jar quarkusclient.jar
-# Document that the service listens on port 50051.
-EXPOSE 50053
-# Run the server command when the container starts.
-CMD java -jar quarkusclient.jar
+EXPOSE 8080
+USER 1001
+
+CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]
